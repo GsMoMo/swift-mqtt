@@ -77,7 +77,9 @@ public class MQTTClient {
     }
 
     deinit {
-        try? group.syncShutdownGracefully()
+        defer {
+            try? self.group.syncShutdownGracefully()
+        }
     }
 
     private var channelState: ChannelState = .disconnected {

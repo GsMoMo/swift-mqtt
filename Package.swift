@@ -9,8 +9,8 @@ let package = Package(
         .library(name: "MQTT", targets: ["MQTT"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/apple/swift-nio.git", from: "2.0.0"),
-        .package(url: "https://github.com/apple/swift-nio-ssl.git", from: "2.0.0"),
+        .package(url: "https://github.com/apple/swift-nio.git", from: "2.59.0"),
+        .package(url: "https://github.com/apple/swift-nio-ssl.git", from: "2.25.0"),
     ],
     targets: [
         .target(
