@@ -11,13 +11,13 @@ extension Data {
     mutating func write(_ data: UInt16) {
         let msb = UInt8(data / 256)
         let lsb = UInt8(data % 256)
-        append(contentsOf: [msb, lsb])
+        insert(contentsOf: [msb, lsb], at: count)
     }
 
     /// Append string value encoded as UTF-8 prefixed with 16 bits length field.
     mutating func write(_ string: String) {
         write(UInt16(string.count))
-        append(contentsOf: string.utf8)
+        insert(contentsOf: string.utf8, at: count)
     }
 
     mutating func advance(_ bytes: Int) {
